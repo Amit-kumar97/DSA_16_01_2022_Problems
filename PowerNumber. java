@@ -15,7 +15,7 @@ public class PowerNumber {
     //-----------Variable declaration
     int n;
     int x;
-    //-----------Constructor
+    //-----------Non-Parametrised Constructor
     PowerNumber()
     {
         this.n = n;
