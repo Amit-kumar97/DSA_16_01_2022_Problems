@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+/*an array of 5 elements with values {1,2,4,2,6}.search value 2 in the given array and 
+print the first occurrence(index) of search value. 
+Do it recursively 
+ */
+public class SearchRecurtion {
+    //-----------Variable declaration
+    int n;
+    int[] ar;
+    int search_value;
+    //-----------Constructor
+    SearchRecurtion()
+    {
+        this.n = n;
+        ar = new int[n];
+        this.search_value = search_value;
+    }
+    //---------method here to implementing the logic
+    public static int find(int ar[], int currentIndex, int search_value)
+    {
+        //----------------base condition
+        if(ar[currentIndex]==search_value)
+        {
+            return currentIndex;
+        }
+        //---------------calling method recursively until the base condition is satisfied
+        currentIndex = find(ar,currentIndex+1,search_value);
+        return currentIndex;
+    }
+}
+//------------Execution Class
+class searchrecurtiontest
+{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of Array:");
+        int size = sc.nextInt();
+        int ar[] = new int[size];                                  //---------------Says ar={1,2,4,2,6}
+        System.out.println("Enter the Elements of Array:");
+        for(int i=0; i< ar.length; i++)
+        {
+            ar[i] = sc.nextInt();
+        }
+        System.out.println("Enter the value that you want to search:");
+        int search_value = sc.nextInt();                            //-----------says search_value=6
+        int currentIndex = 0;
+        SearchRecurtion obj = new SearchRecurtion();
+        System.out.println("First Index of "+search_value+" is:"+obj.find(ar,currentIndex,search_value));
+    }
+}
